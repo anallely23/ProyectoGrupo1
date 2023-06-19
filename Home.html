@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Zambrano Muruzumbay Darwin">
+    <title>Sublimado y Estampados S.A. </title>
+    <link rel="shortcut icon" href="logo-imno.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/EstiloExterno.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #fff;
+        }
+        h2 {
+            text-align: center;
+        }
+        
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .contenedor-header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .titulo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .imagen-port {
+            width: 33.33%;
+            padding: 5px;
+        }
+        
+        .imagen-port img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .hover-galeria {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .imagen-port:hover .hover-galeria {
+            opacity: 1;
+        }
+        
+        .hover-galeria img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .about-services {
+            background-color: #f4f4f4;
+            padding: 40px 0;
+        }
+        
+        .servicio-cont {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .servicio-ind {
+            width: 300px;
+            text-align: center;
+            margin: 0 10px;
+        }
+        
+        .servicio-ind img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .formulario input,
+        .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .formulario .boton {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        footer {
+            color: #0e0d0d;
+            padding: 10px 20px;;
+            text-align: center;
+        }
+        
+        .sociales a {
+            color: #61aef7;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .imagen-port {
+            width: 50%;
+            }
+        
+            .servicio-ind {
+            width: 100%;
+            }
+        }body {
+            font-family: 'open sans';
+        }
+
+        .contenedor {
+            padding: 60px 0;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .titulo {
+            color: #4b84da;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+            background-color:#caf3f5;
+        }
+
+        nav > a{
+            color:#fff;
+            font-weight: 300;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        nav > a:hover{
+            text-decoration: underline;
+        }  
+
+       header .textos-header{
+            display: flex;
+            height: 180px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .textos-header h2{
+            font-size: 29px;
+            text-align: center; /* Alinea el texto al centro */
+            margin-top: 20px; /* Añade un margen superior para separar del menú */
+            color:#fff;
+        }
+
+        main .sobre-nosotros{
+            padding: 30px 0 60px 0;
+        }
+        .contenedor-sobre-nosotros{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .imagen-about-us{
+            width: 48%;
+        }
+
+        .sobre-nosotros .contenido-textos{
+            width: 48%;
+        }
+
+        .contenido-textos h4{
+            margin-bottom: 15px;
+        }
+
+        .contenido-textos h4 span{
+            background: #4d0686;
+            color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            padding: 2px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+            margin-right: 5px;
+        }
+
+        .contenido-textos p{
+            padding: 0px 0px 30px 15px;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .portafolio{
+            background: #f2f2f2;
+        }
+
+        .galeria-port{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .imagen-port{
+            width: 24%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+        }
+
+        .imagen-port > img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hover-galeria{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            transform: scale(0);
+            background: hsla(93, 79%, 72%, 0.7);
+            transition: transform .5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hover-galeria img{
+            width: 50px;
+        }
+
+        .hover-galeria p{
+            color: #09dbf7;
+        }
+
+        .imagen-port:hover .hover-galeria{
+            transform: scale(1);
+        }
+
+        .about-services{
+            background: #f2f2f2;
+            padding-bottom: 30px;
+        }
+
+        .servicio-cont{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .servicio-ind{
+            width: 28%;
+            text-align: center;
+        }
+
+        .servicio-ind img{
+            width: 90%;
+        }
+
+        .servicio-ind h3{
+            margin: 10px 0;
+        }
+
+        .servicio-ind p{
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        footer{
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .content-foo h4{
+            color: #fff;
+            border-bottom: 3px solid #af20d3;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border: none;
+        }
+
+        h5 {
+        font-size: 26px;
+        color:rgb(17, 83, 206)
+        }
+
+        .formulario{
+            align-self: center;
+            text-align: center;
+        }
+
+        .contacto {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;  
+        }
+
+        @media screen and (max-width:900px){
+            header{
+                background-position: center;
+            }
+
+            .contenedor-sobre-nosotros{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .sobre-nosotros .contenido-textos{
+                width: 90%;
+            }
+
+            .imagen-about-us{
+                width: 90%;
+            }
+
+            .imagen-port{
+                width: 44%;
+            }
+
+            .servicio-cont{
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .servicio-ind{
+                width: 100%;
+                text-align: center;
+            }
+
+            .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+                margin-bottom: 60px;
+            }
+
+            .servicio-ind img{
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width:500px){
+            nav{
+                text-align: center;
+                padding: 30px 0 0 0;
+            }
+
+            nav > a{
+                margin-right: 5px;
+            }
+
+            .textos-header h2{
+                font-size: 35px;
+            }
+
+            .textos-header h3{
+                font-size: 20px;
+            }
+
+            .imagen-about-us{
+                margin-bottom: 60px;
+                width: 99%;
+            }
+
+            .sobre-nosotros .contenido-textos{
+                width: 95%;
+            }
+        
+            .imagen-port{
+                width: 95%;
+            }
+
+            .contenedor-footer{
+                flex-direction: column;
+                border: none;
+            }
+
+            .content-foo{
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .content-foo p{
+                color: #ccc;
+                border-bottom: 1px solid #f2f2f2;
+                padding-bottom: 20px;
+            }
+
+            .titulo-final{
+                font-size: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+            <!-- Contenido del encabezado -->
+            <div class="logo">
+                <img src="Imagenes/logotipo.png" alt="Logo de Estampados y Sublimado">
+                <h1 class="sitio">Sublimado y Estampados S.A.</h1>
+            </div>
+            <nav>
+                <!-- Menú de navegación -->
+                <ul>
+                    <li><a href="Home.html">Inicio</a></li>
+                    <li><a href="Accesorios.html">Categoría de Accesorios</a></li>
+                    <li><a href="Vestimenta.html">Categoría de Ropa</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <header>
+        <div class="textos-header">
+            <h2>¡Bienvenidos a Sublimado y Estampados S.A. Somos una empresa dedicada a brindar soluciones creativas y personalizadas en el mundo de los estampados. Si estás buscando añadir estilo y originalidad a tus prendas, accesorios o cualquier tipo de producto, has llegado al lugar indicado.</h2>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <h3 class="titulo">Nuestro producto</h3>
+            <div class="contenedor-sobre-nosotros">
+                <img src="Imagenes/ESTAMPADOS-PERSONALZADOS-2.jpg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h4><span>1</span>Productos de calidad</h4>
+                    <p>En Sublimado y Estampados S.A. nos enorgullece ofrecer los mejores productos del mercado. Trabajamos con materiales de alta calidad para garantizar resultados excepcionales en cada estampado. Nuestro compromiso es brindarte productos duraderos y con un acabado impecable, para que luzcas con estilo y confianza.</p>
+                    
+                    <h4><span>2</span>Variedad de diseños</h4>
+                    <p>En Sublimado y Estampados S.A. sabemos que cada persona es única, por eso te ofrecemos una amplia variedad de diseños para que encuentres el que mejor se adapte a tu estilo. Desde diseños clásicos y elegantes hasta opciones más atrevidas y creativas, estamos seguros de que encontrarás el estampado perfecto para ti. Además, también puedes enviarnos tus propios diseños y los plasmaremos en tus prendas con la mejor calidad y atención al detalle.</p>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h3 class="titulo">Portafolio</h3>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="https://impritexecuador.com/wp-content/uploads/2022/01/taza-plato-platos-sublimacion-sublimado-sublimaciones-diseno-impresion-.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423351_1280.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="https://impritexecuador.com/wp-content/uploads/2022/01/camiseta-camisetas-deportivas-personalizada-sublimada-sublimacion.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423351_1280.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="https://impritexecuador.com/wp-content/uploads/2022/01/taza-sublimacion-sublimado-sublimaciones-diseno-impresion-sublimar-metalizada.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423351_1280.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="https://impritexecuador.com/wp-content/uploads/2022/01/sublimados-estampados-sublimaciones-sublimacion-gorra.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423351_1280.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-services">
+            <div class="contenedor">
+                <h3 class="titulo">Nuestros servicios</h3>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="Imagenes/NuestroServicio.png" alt="">
+                        <h4>Servicio de estampado personalizado</h4>
+                        <p>En Sublimado y Estampados S.A. ofrecemos un servicio de estampado personalizado que te permite plasmar tus diseños únicos en prendas de alta calidad. Trabajamos con precisión y cuidado para asegurar que cada detalle de tu diseño se refleje con claridad y durabilidad en la prenda. Ya sea que necesites estampados para tu negocio, eventos especiales o simplemente para expresar tu estilo individual, nuestro equipo está listo para ayudarte.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="Imagenes/NuestroServicio2.png" alt="">
+                        <h4>Asesoramiento y diseño</h4>
+                        <p>En Sublimado y Estampados S.A. no solo nos encargamos de imprimir tus diseños, sino que también te brindamos asesoramiento y apoyo en el proceso de creación. Nuestro equipo de diseñadores expertos está disponible para trabajar contigo, ofreciendo ideas y sugerencias para crear estampados únicos y atractivos. Nos aseguramos de entender tus necesidades y preferencias para que el resultado final supere tus expectativas.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="Imagenes/NuestroServicio3.png" alt="">
+                        <h4>Amplia variedad de prendas</h4>
+                        <p>En Sublimado y Estampados S.A. contamos con una amplia variedad de prendas disponibles para estampar. Desde camisetas y sudaderas hasta gorras y bolsos, tenemos opciones para todos los gustos y necesidades. Trabajamos con proveedores de confianza para garantizar la calidad de las prendas y ofrecerte un resultado final excepcional. Explora nuestra colección y encuentra la prenda perfecta para tu estampado personalizado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="formulario">
+            <h5>Formulario</h5>
+            <ul class="contacto">
+                <li> <p>Le invitamos a registrarse en nuestra pagina para asi tener actualizaciones de los productos mas recientes:</p></li>
+                <li><a href="FormRegistro.html">Formulario de Registro</a></li> 
+            </ul>
+        </section>
+        <section class="contacto">
+            <div class="contenedor">
+                <h3 class="titulo">Contacto</h3>
+                <form action="#" class="formulario">
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Email">
+                <textarea name="MensajeDz" id="darwin10" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                <input type="submit" value="Enviar" class="boton">
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="contenedor">
+                <h3 class="titulo-footer">Redes sociales</h3>
+                <p id="Darwin"> Hecho por: <a href="#2">Zambrano Muruzumbay Darwin</a></p>
+                <div class="sociales">
+                    <a href="#"><i class="fab fa-facebook-f">Facebook</i></a>
+                    <a href="#"><i class="fab fa-twitter">Twitter</i></a>
+                    <a href="#"><i class="fab fa-instagram">Instagram</i></a>
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube">Youtube</i></a>      
+                </div>
+                    <h4 class="copy">Derechos de Autor &copy; 2023 - Sublimado y Estampados S.A. </h4>
+            </div>
+        </footer>
+    </main>
+</body>
+                        
+</html>
